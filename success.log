@@ -218,3 +218,421 @@ Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with Int
 Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
 	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
 Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent
+System check identified some issues:
+
+WARNINGS:
+Buyer.Billing.discount: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.grand_total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.shipping_fee: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.tax: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.Billing.total: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.BuyerCard.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Buyer.CardModel.cardNumber: (fields.W122) 'max_length' is ignored when used with BigIntegerField.
+	HINT: Remove 'max_length' from field
+Buyer.CardModel.cvcNum: (fields.W122) 'max_length' is ignored when used with IntegerField.
+	HINT: Remove 'max_length' from field
+Seller.Seller.buyer: (fields.W342) Setting unique=True on a ForeignKey has the same effect as using a OneToOneField.
+	HINT: ForeignKey(unique=True) is usually better served by a OneToOneField.
+Email Sent

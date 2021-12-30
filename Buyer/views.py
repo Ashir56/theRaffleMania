@@ -1,16 +1,18 @@
-from django.shortcuts import render
-
 # Create your views here.
+import ast
+import json
+
+from django.core.exceptions import ValidationError
 from rest_framework.response import Response
 from django.http import HttpResponse
 from rest_framework import status
 from .serializer import BuyerSerializer, BuyerCardSerializer, BillingSerializer, \
     CartSerializer, BuyerCardUpdateSerializer, AddressSerializer
-from .models import Buyer, BuyerCard, Billing, Cart
+from .models import Buyer, BuyerCard, Billing, Cart, Charge
 from rest_framework.generics import GenericAPIView
 from rest_framework import viewsets
 from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, \
-    UpdateModelMixin, DestroyModelMixin
+     DestroyModelMixin
 from rest_framework.decorators import action
 from Product.models import ProductBuyer
 import stripe
@@ -24,6 +26,7 @@ stripe.api_key = STRIPE_SECRET_KEY
 
 
 def home(request):
+    print(request)
     return HttpResponse('<h1>BLOGS</h1>')
 
 
@@ -32,12 +35,10 @@ class BuyerAPI(GenericAPIView):
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
-        if serializer.is_valid(raise_exception=False):
+        if serializer.is_valid(raise_exception=True):
             serializer.save()
-            return Response({"success": True, "Msg": "Buyer Created Successfully"},
-                            status=status.HTTP_201_CREATED)
-        return Response({"success": False, "Msg": str(self.serializer_class.errors)},
-                        status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response({"success": True, "Msg": "Buyer Created Successfully"},
+                        status=status.HTTP_201_CREATED)
 
     def get(self, request):
         try:
@@ -95,7 +96,7 @@ class BuyerCardAPI(viewsets.GenericViewSet, CreateModelMixin,
             self.create(request, *args, **kwargs)
             return Response({"success": True, "msg": "Card Added"},
                             status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValidationError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -182,14 +183,14 @@ class BillingAPI(GenericAPIView):
     # Billing Creation and Cart Deletion
     def post(self, request):
         try:
-            user_id = request.data.get('user_id')
+            user_id = request.headers.get('Authorization')
             shipping_fee = request.data.get('fee')
-            user = Buyer.objects.get(user_id=user_id)
+            user = Buyer.objects.get(uid=user_id)
             # Get User Cart
             carts = Cart.objects.filter(buyer=user)
             discount = request.data.get('discount')
             # Get User Credit Card
-            card = BuyerCard.objects.get(association=user)
+            card = BuyerCard.objects.get(buyer=user)
             print(carts)
 
             if not carts:
@@ -218,18 +219,20 @@ class BillingAPI(GenericAPIView):
                 price *= cart.number_of_tickets
                 product.save()
                 prices.append(price)
-            total_sum = sum(prices)
-            total = total_sum + int(shipping_fee)
-            grand_total = total-int(discount)
-            tax = (grand_total*1)/100
-            grand_total += tax
-            grand_total = int(grand_total)
-            stripe.Charge.create(
-                amount=grand_total * 100,
-                currency="usd",
-                customer=card.token,
-                description="My First Test Charge (created for API docs)",
-            )
+                total_sum = sum(prices)
+                total = total_sum + int(shipping_fee)
+                grand_total = total-int(discount)
+                tax = (grand_total*1)/100
+                grand_total += tax
+                grand_total = int(grand_total)
+                charge = stripe.Charge.create(
+                    amount=grand_total * 100,
+                    currency="usd",
+                    customer=card.token,
+                    description="My First Test Charge (created for API docs)",
+                )
+                print(charge)
+                charge = Charge.objects.create(buyer=user, product=cart.product, charge_id=charge.id)
             # Delete User Cart
             carts.delete()
             billing = Billing.objects.create(instance=user, shipping_fee=shipping_fee, tax=tax,
@@ -266,7 +269,7 @@ class getAddress(GenericAPIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
-            return Response({"success": False, "msg": serializer.errors}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SendEmailAPI(GenericAPIView):
@@ -278,4 +281,20 @@ class SendEmailAPI(GenericAPIView):
             recipient_list=[request.data.get('receiver')]
 
         )
-        return Response({"success": True}, status=status.HTTP_200_OK)
+        return Response({"success": True, "msg": "E-mail sent"}, status=status.HTTP_200_OK)
+
+
+class RefundAPI(GenericAPIView):
+    def post(self, request):
+        try:
+            buyer_id = request.headers.get('Authorization')
+            buyer = Buyer.objects.get(uid=buyer_id)
+            charges = Charge.objects.filter(buyer=buyer)
+            for charge in charges:
+                stripe.Refund.create(
+                    charge=charge.charge_id,
+                )
+            return Response("Charges Refunded", status=status.HTTP_200_OK)
+        except Exception as e:
+            print(e)
+            return Response("Something went wrong", status=status.HTTP_400_BAD_REQUEST)

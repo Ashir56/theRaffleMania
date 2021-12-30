@@ -27,6 +27,6 @@ def send_email():
         subject="Email From Cronjob",
         message="I am sending this email via cronjob you will get it every 2 minutes",
         from_email=settings.EMAIL_HOST_USER,
-        recipient_list=["a4aliahmad123@gmail.com", "rijepe9732@saturdata.com"]
+        recipient_list=["a4aliahmad123@gmail.com", "rijepe9732@saturdata.com", "shahidmuneerawan@gmail.comp"]
     )
     print("Email Sent")

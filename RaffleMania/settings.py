@@ -175,11 +175,12 @@ LOGGING = {
     },
 }
 CRONTAB_COMMAND_SUFFIX = '2>&1'
+
 CRONJOBS = [
     ('*/1 * * * *', 'Buyer.cron.send_email', '>>'+os.path.join(BASE_DIR, f'success.log {CRONTAB_COMMAND_SUFFIX}')),
 ]
 
-
-# CRON_CLASSES = [
-#    "Buyer.cron.MyCronJob",
-# ]
+# from utils import exceptions
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': "utils.exceptions.custom_exception_handler"
+}

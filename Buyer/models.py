@@ -15,7 +15,7 @@ class Buyer(UserModels):
 
 
 class Billing(GenericModels):
-    instance = models.ForeignKey(Buyer, on_delete=models.SET_NULL, null=True)
+    instance = models.ForeignKey(Buyer, on_delete=models.DO_NOTHING, null=True)
     total = models.IntegerField(max_length=5, null=True)
     discount = models.IntegerField(max_length=5, null=True)
     shipping_fee = models.IntegerField(max_length=5, null=True)
@@ -32,3 +32,9 @@ class Cart(CartModel):
     buyer = models.ForeignKey(Buyer, on_delete=models.CASCADE, related_name='Buyer')
     product = models.ForeignKey('Product.Products', on_delete=models.CASCADE, null=True, related_name='Product')
     name = models.CharField(max_length=100)
+
+
+class Charge(GenericModels):
+    buyer = models.ForeignKey(Buyer, on_delete=models.CASCADE)
+    product = models.ForeignKey('Product.Products', on_delete=models.CASCADE)
+    charge_id = models.CharField(max_length=100)
