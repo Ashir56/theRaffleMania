@@ -1,8 +1,3 @@
-# Create your views here.
-import ast
-import json
-
-from django.core.exceptions import ValidationError
 from rest_framework.response import Response
 from django.http import HttpResponse
 from rest_framework import status
@@ -49,7 +44,7 @@ class BuyerAPI(GenericAPIView):
         except Exception as e:
             print(e)
             return Response({"success": False, "Msg": "User Does Not Exist"},
-                            status=status.HTTP_200_OK)
+                            status=status.HTTP_404_NOT_FOUND)
 
     def patch(self, request):
         try:
@@ -59,7 +54,7 @@ class BuyerAPI(GenericAPIView):
             if serializer.is_valid():
                 serializer.save()
             return Response({"success": True, "msg": "User Updated"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -96,7 +91,7 @@ class BuyerCardAPI(viewsets.GenericViewSet, CreateModelMixin,
             self.create(request, *args, **kwargs)
             return Response({"success": True, "msg": "Card Added"},
                             status=status.HTTP_201_CREATED)
-        except ValidationError as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -130,7 +125,7 @@ class BuyerCardAPI(viewsets.GenericViewSet, CreateModelMixin,
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
                 return Response({"success": True, "msg": "Card Data is Updated"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -194,18 +189,20 @@ class BillingAPI(GenericAPIView):
             print(carts)
 
             if not carts:
-                raise Exception('There is nothing to buy')
+                raise ValueError('There is nothing to buy')
 
             if not user:
-                raise Exception('There is no user of this type')
+                raise ValueError('There is no user of this type')
 
             if not card:
-                raise Exception('You do not have a credit card Registered')
+                raise ValueError('You do not have a credit card Registered')
 
             for cart in carts:
                 product = cart.product
                 number_of_tickets = cart.number_of_tickets
                 buyer = ProductBuyer.objects.create(buyer=user, product=product, number_of_tickets=number_of_tickets)
+
+            tax, grand_total, total_sum = 0
 
             if discount is None:
                 discount = 0
@@ -238,7 +235,7 @@ class BillingAPI(GenericAPIView):
             billing = Billing.objects.create(instance=user, shipping_fee=shipping_fee, tax=tax,
                                              grand_total=grand_total, total=total_sum, discount=discount)
             return Response({"success": True, "msg": str(billing)}, status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -262,12 +259,11 @@ class getAddress(GenericAPIView):
     #GET ADDRESS
     def get(self, request):
         try:
-            fields = ('username', 'address', 'phoneNumber')
             user_id = request.headers.get('Authorization')
             user = Buyer.objects.get(uid=user_id)
             serializer = AddressSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -295,6 +291,6 @@ class RefundAPI(GenericAPIView):
                     charge=charge.charge_id,
                 )
             return Response("Charges Refunded", status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response("Something went wrong", status=status.HTTP_400_BAD_REQUEST)

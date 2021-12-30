@@ -80,11 +80,11 @@ class CartSerializer(ModelSerializer):
         product = data.get('product')
         number_of_tickets = data.get('number_of_tickets')
         if buyer is None:
-            raise Exception("This Buyer Does Not Exist")
+            raise ValueError("This Buyer Does Not Exist")
         if product is None:
-            raise Exception("This Product Does Not Exist")
+            raise ValueError("This Product Does Not Exist")
         if number_of_tickets > product.ticket_limit:
-            raise Exception("Ticket Limit Exceeded")
+            raise ValueError("Ticket Limit Exceeded")
 
         product.ticket_limit -= number_of_tickets
         product.save()

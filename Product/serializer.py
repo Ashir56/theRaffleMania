@@ -42,18 +42,6 @@ class WishlistSerializer(serializers.ModelSerializer):
         model = Wishlist
         fields = '__all__'
 
-    # def __init__(self, *args, **kwargs):
-    #     super(WishlistSerializer, self).__init__(*args, **kwargs)
-    #     if self.fields['buyer'].error_messages['does_not_exist'] is not None:
-    #         print("HELLO")
-    #         raise Exception('Buyer Does Not Exist')
-    #     if self.fields['product'].error_messages['does_not_exist'] is not None:
-    #         print("HELLO")
-    #         raise Exception('Product Does Not Exist')
-    #     self.fields['buyer'].error_messages['does_not_exist'] = u'This buyer does not Exist'
-    #     self.fields['product'].error_messages['does_not_exist'] = u'This product does not exist'
-
-
     def validate(self, data):
         if data.get('buyer') is None:
             raise Exception('Buyer Field Can not be None')

@@ -28,7 +28,7 @@ class SellerAPI(viewsets.GenericViewSet, CreateModelMixin,
         try:
             self.create(request, *args, **kwargs)
             return Response({"success": True, "msg": "Seller Created"}, status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -37,7 +37,7 @@ class SellerAPI(viewsets.GenericViewSet, CreateModelMixin,
     def get(self, request, *args, **kwargs):
         try:
             return self.retrieve(request, *args, **kwargs)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": "Seller Does Not Exist"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -48,7 +48,7 @@ class SellerAPI(viewsets.GenericViewSet, CreateModelMixin,
             self.destroy(request, *args, **kwargs)
             return Response({"success": True, "msg": "Seller Deleted"},
                             status=status.HTTP_204_NO_CONTENT)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "mdg": "Seller does not exist"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -61,6 +61,6 @@ class SellerAPI(viewsets.GenericViewSet, CreateModelMixin,
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
                 return Response({"success": True, "msg": "Seller Data is Updated"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

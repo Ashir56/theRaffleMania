@@ -37,7 +37,7 @@ class ProductAPI(viewsets.GenericViewSet, CreateModelMixin,
             request.data['product_size'] = [request.data.get('product_size')]
             self.create(request, *args, **kwargs)
             return Response({"success": True, "msg": "Product Added"}, status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -50,7 +50,7 @@ class ProductAPI(viewsets.GenericViewSet, CreateModelMixin,
             qs = Products.objects.filter(instance=seller)
             serializer = ProductsSerializer(qs, many=True)
             return Response(serializer.data)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": "Product Does Not Exist"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -61,7 +61,7 @@ class ProductAPI(viewsets.GenericViewSet, CreateModelMixin,
             self.destroy(request, *args, **kwargs)
             return Response({"success": True, "msg": "Product Deleted"},
                             status=status.HTTP_204_NO_CONTENT)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "mdg": "Product does not exist"},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -74,7 +74,7 @@ class ProductAPI(viewsets.GenericViewSet, CreateModelMixin,
             if serializer.is_valid(raise_exception=True):
                 serializer.save()
                 return Response({"success": True, "msg": "Product Data is Updated"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -119,7 +119,7 @@ class ReviewAPI(GenericAPIView):
                 product.product_rating = product_rating
                 product.save()
             return Response({"success": True, "msg": "Review Added"}, status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -133,7 +133,7 @@ class ReviewAPI(GenericAPIView):
             serializer = ReviewsSerializer(reviews, many=True)
             return Response(serializer.data,
                             status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": "There are no reviews for this"})
 
@@ -166,7 +166,7 @@ class WishlistAPI(viewsets.GenericViewSet, CreateModelMixin,
             self.create(request, *args, **kwargs)
             return Response({"success": True, "Msg": "Product Added to Wishlist"},
                             status=status.HTTP_201_CREATED)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "Msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -175,7 +175,7 @@ class WishlistAPI(viewsets.GenericViewSet, CreateModelMixin,
     def get(self, request, *args, **kwargs):
         try:
             return self.list(request, *args, **kwargs)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "Msg": "User Does Not Exist"},
                             status=status.HTTP_200_OK)
@@ -191,7 +191,7 @@ class WishlistAPI(viewsets.GenericViewSet, CreateModelMixin,
             wishlist.delete()
             return Response({"success": True, "msg": "Product Deleted From wishlist"},
                             status=status.HTTP_204_NO_CONTENT)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
@@ -216,8 +216,8 @@ class ProductByPrice(GenericAPIView):
                             ser.append(serializer.data)
                 return Response(ser, status=status.HTTP_200_OK)
             else:
-                raise Exception
-        except Exception as e:
+                raise ValueError
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -232,7 +232,7 @@ class ProductByUser(GenericAPIView):
             product = Products.objects.filter(instance=seller)
             serializer = self.serializer_class(product, many=True)
             return Response(serializer.data)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -247,10 +247,10 @@ class ProductStatus(GenericAPIView):
             elif product.product_status == 1:
                 product.product_status = 0
             else:
-                raise Exception
+                raise ValueError
             product.save()
             return Response({"success": True, "msg": "Status is Changed"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -262,7 +262,7 @@ class TicketAPI(GenericAPIView):
             product = Products.objects.get(product_id=product_id)
             tickets = product.ticket_sold
             return Response({"success": True, "Ticket Sold": tickets}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -281,8 +281,8 @@ class ProductRatingFilter(GenericAPIView):
                     ser.append(serializer.data)
                 return Response(ser)
             else:
-                raise Exception("Product Does Not Exist")
-        except Exception as e:
+                raise ValueError("Product Does Not Exist")
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -297,7 +297,7 @@ class OrderAPI(GenericAPIView):
                 serializer.save()
             return Response({"success": True, "msg": "Product is own its way"},
                             status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -309,7 +309,7 @@ class OrderAPI(GenericAPIView):
             order.order_delivered = True
             order.save()
             return Response({"success": True, "msg": "Order Delivered"}, status=status.HTTP_200_OK)
-        except Exception as e:
+        except ValueError as e:
             print(e)
             return Response({"success": False, "msg": str(e)},
                             status=status.HTTP_500_INTERNAL_SERVER_ERROR)
