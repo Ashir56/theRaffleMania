@@ -16,7 +16,6 @@ def custom_exception_handler(exc, context):
     response = exception_handler(exc, context)
     # Update the structure of the response data.
     customized_response = []
-
     if isinstance(exc, ValidationError):
 
         if response is not None:

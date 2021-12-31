@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Products, ProductBuyer, Wishlist, Reviews, Order
+from .models import Products, ProductBuyer,\
+    Wishlist, Reviews, Order
 
 
 class ProductsSerializer(serializers.ModelSerializer):
